@@ -3,6 +3,7 @@
 This is a cafe ordering system made for the university of the south pacific in Cs415.
 this project is used for assessment purposes only and not for other use.
 the codebase for this is made with Flutter.
+The Coding was Done By Ajnesh Prasad And the Documentation was done by Fazeel Ali and Aman Prasad
 
 ## Getting Started
 
