@@ -2,8 +2,10 @@ import 'package:cos/Services/auth.dart';
 import 'package:cos/views/auth/login.dart';
 import 'package:cos/views/auth/register.dart';
 import 'package:cos/views/home/UserPages/cart.dart';
+import 'package:cos/views/home/UserPages/donaldsLogged.dart';
 import 'package:cos/views/home/UserPages/homeviewLogged.dart';
 import 'package:cos/views/home/UserPages/hotbreadLogged.dart';
+import 'package:cos/views/home/UserPages/wishboneLogged.dart';
 import 'package:cos/widgets/NavigationBar/nav_bar_guest.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +31,7 @@ class CollapsingNavigationDrawerUserState extends State<CollapsingNavigationDraw
     itens.add(new ScreenHiddenDrawer(
         new ItemHiddenMenu(
           name: "Southern Cross",
-          baseStyle: TextStyle( color: Colors.white.withOpacity(0.8), fontSize: 28.0 ),
+          baseStyle: TextStyle( color: Colors.white.withOpacity(0.8), fontSize: 19.0 ),
           colorLineSelected: Colors.teal,
         ),
         HomePage()));
@@ -37,10 +39,26 @@ class CollapsingNavigationDrawerUserState extends State<CollapsingNavigationDraw
     itens.add(new ScreenHiddenDrawer(
         new ItemHiddenMenu(
           name: "Hot Bread Kitchen",
-          baseStyle: TextStyle( color: Colors.white.withOpacity(0.8), fontSize: 28.0 ),
+          baseStyle: TextStyle( color: Colors.white.withOpacity(0.8), fontSize: 19.0 ),
           colorLineSelected: Colors.deepOrangeAccent,
         ),
         HotBreadPage()));
+
+    itens.add(new ScreenHiddenDrawer(
+        new ItemHiddenMenu(
+          name: "Mcdonalds",
+          baseStyle: TextStyle( color: Colors.white.withOpacity(0.8), fontSize: 19.0 ),
+          colorLineSelected: Colors.deepOrangeAccent,
+        ),
+        donaldsLogged()));
+
+    itens.add(new ScreenHiddenDrawer(
+        new ItemHiddenMenu(
+          name: "Wishbone",
+          baseStyle: TextStyle( color: Colors.white.withOpacity(0.8), fontSize: 19.0 ),
+          colorLineSelected: Colors.deepOrangeAccent,
+        ),
+        wishboneLogged()));
 
 
     super.initState();

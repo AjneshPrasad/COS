@@ -1,7 +1,10 @@
 import 'package:cos/views/auth/login.dart';
 import 'package:cos/views/auth/register.dart';
+import 'package:cos/views/home/GuestPages/donalds.dart';
 import 'package:cos/views/home/GuestPages/homeview.dart';
 import 'package:cos/views/home/GuestPages/hotbread.dart';
+import 'package:cos/views/home/GuestPages/wishbone.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
 
@@ -22,18 +25,35 @@ class CollapsingNavigationDrawerGuestState extends State<CollapsingNavigationDra
     itens.add(new ScreenHiddenDrawer(
         new ItemHiddenMenu(
           name: "Southern Cross",
-          baseStyle: TextStyle( color: Colors.white.withOpacity(0.8), fontSize: 28.0 ),
+          baseStyle: TextStyle( color: Colors.white.withOpacity(0.8), fontSize: 19.0 ),
           colorLineSelected: Colors.teal,
         ),
-        HomePage()));
+        HomePage()==null
+        ?Center(child: CircularProgressIndicator()):HomePage()));
 
     itens.add(new ScreenHiddenDrawer(
         new ItemHiddenMenu(
           name: "Hot Bread Kitchen",
-          baseStyle: TextStyle( color: Colors.white.withOpacity(0.8), fontSize: 28.0 ),
+          baseStyle: TextStyle( color: Colors.white.withOpacity(0.8), fontSize: 19.0 ),
           colorLineSelected: Colors.deepOrangeAccent,
         ),
         HotBreadPage()));
+
+    itens.add(new ScreenHiddenDrawer(
+        new ItemHiddenMenu(
+          name: "McDonalds",
+          baseStyle: TextStyle( color: Colors.white.withOpacity(0.8), fontSize: 19.0 ),
+          colorLineSelected: Colors.deepOrangeAccent,
+        ),
+        donaldsPage()));
+
+    itens.add(new ScreenHiddenDrawer(
+        new ItemHiddenMenu(
+          name: "Wishbone",
+          baseStyle: TextStyle( color: Colors.white.withOpacity(0.8), fontSize: 19.0 ),
+          colorLineSelected: Colors.deepOrangeAccent,
+        ),
+        wishbonePage()));
 
 
     super.initState();
